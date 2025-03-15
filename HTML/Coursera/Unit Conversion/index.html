@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unit Converter</title>
+</head>
+<body>
+    <div>
+        <h2>Unit Converter</h2>        
+        <label>Temperature (°C to °F):</label>
+        <input type="number" id="celsius" placeholder="Enter Celsius">
+        <button onclick="convertTemperature()">Convert</button>
+        <p id="fahrenheit"></p>        
+        <label>Weight (kg to lbs):</label>
+        <input type="number" id="kilograms" placeholder="Enter Kilograms">
+        <button onclick="convertWeight()">Convert</button>
+        <p id="pounds"></p>
+        
+        <label>Distance (km to miles):</label>
+        <input type="number" id="kilometers" placeholder="Enter Kilometers">
+        <button onclick="convertDistance()">Convert</button>
+        <p id="miles"></p>
+    </div>
+    <script>
+        function convertTemperature() {
+            let celsius = document.getElementById('celsius').value;
+            let fahrenheit = (celsius * 9/5) + 32;
+            document.getElementById('fahrenheit').innerText = `Fahrenheit: ${fahrenheit.toFixed(2)}°F`;
+        }        
+        function convertWeight() {
+            let kilograms = document.getElementById('kilograms').value;
+            let pounds = kilograms * 2.20462;
+            document.getElementById('pounds').innerText = `Pounds: ${pounds.toFixed(2)} lbs`;
+        }        
+        function convertDistance() {
+            let kilometers = document.getElementById('kilometers').value;
+            let miles = kilometers * 0.621371;
+            document.getElementById('miles').innerText = `Miles: ${miles.toFixed(2)} mi`;
+        }
+    </script>
+</body>
+</html>
